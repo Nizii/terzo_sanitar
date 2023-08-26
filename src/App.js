@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [fadeContent, setFadeContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setFadeContent(true);
+    }, 1500);
+  
+    return () => clearTimeout(timer);
+  }, []);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={fadeContent ? 'fade-in' : ''}>
+      {loading && <h1 className="loading-logo">Terzo Sanitär</h1>}
+      <div className="App">
+        <Header />
+        <Content />
+        <Footer />
+      </div>
     </div>
   );
 }
