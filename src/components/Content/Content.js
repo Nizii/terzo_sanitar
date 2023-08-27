@@ -34,16 +34,15 @@ function Content() {
     <div className="content">
       <img src={currentImage} alt="Sanitär-Bild" style={{ opacity: opacity }} className="content-image" />
       <div className="content-inner">
-        <h2>Willkommen bei Terzo Sanitär</h2>
+        <h2>Willkommen bei Terzo Sanitär GmbH</h2>
         <p>Terzo Sanitär ist Ihr zuverlässiger Partner für alle sanitären Anforderungen. Seit Jahren bieten wir qualitativ hochwertige Dienstleistungen für unsere geschätzten Kunden. Lassen Sie uns Ihnen helfen, Ihr Traumbad zu gestalten!</p>
         
         <h3>Unsere Dienstleistungen</h3>
         <ul>
-            <li>Sanitärinstallation</li>
-            <li>Badrenovierung</li>
-            <li>Notfallreparaturen</li>
-            <li>Heizungsinstallation und -wartung</li>
-            <li>Wasseraufbereitung</li>
+            <li>Beratung</li>
+            <li>Service/Reparaturen</li>
+            <li>Kleinumbauten</li>
+            <li>Wasserschadenortung/Behebung</li>
         </ul>
 
         <h3>Warum Terzo Sanitär?</h3>

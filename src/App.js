@@ -12,7 +12,7 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
       setFadeContent(true);
-    }, 1500);
+    }, 1000);
   
     return () => clearTimeout(timer);
   }, []);

@@ -14,8 +14,8 @@
   color: #004b8c;  
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   opacity: 1;
-  animation: fadeOut 1.5s forwards;
-  animation-delay: 0.5s;
+  animation: fadeOut 1s forwards;
+  animation-delay: 0.25s;
 }
 
 .fade-in .App {

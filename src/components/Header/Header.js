@@ -5,7 +5,7 @@ function Header() {
     return (
       <div>
         <div className="adress-bar">
-        <div className="adress-text">terzosanitaer@bluewin.ch | Telefon 044 444 44 44  | Öffnungszeiten 07.00 - 17.00</div>
+        <div className="adress-text">terzosanitaer@bluewin.ch | Telefon +41 76 589 33 31  | Öffnungszeiten 07.00 - 17.00</div>
         </div>        
         <header className="header">
           <div className="header-logo">
