@@ -63,7 +63,28 @@
   width: 100%;
 }
 
+.adress-bar {
+  background-color: #2e2e2e;
+  padding: 5px 40px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1); 
+}
+
+.adress-text {
+  color: #fff;
+  font-size: 16px;
+  text-align: right !important; 
+}
+
 @media (max-width: 768px) {
+
+  .adress-bar {
+    padding: 3px 20px; 
+  }
+
+  .adress-text {
+    font-size: 12px;
+  }
+
   .header {
     padding: 10px 20px;
     justify-content: flex-start;
@@ -86,12 +107,17 @@
   .header nav a {
     padding: 7px 10px; 
   }
+
 }
 
 @media (min-width: 769px) {
   .header {
     flex-direction: row;
     align-items: center;
+  }
+
+  .nav-text{
+    font-size: 22px;
   }
 
   .header-logo {
