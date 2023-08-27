@@ -1,9 +1,11 @@
 import React from 'react';
 import './Header.css';
 
+
+
 function Header() {
     return (
-      <div>
+      <div class="header-section">
         <div className="adress-bar">
         <div className="adress-text">terzosanitaer@bluewin.ch | Telefon +41 76 589 33 31  | Öffnungszeiten 07.00 - 17.00</div>
         </div>        

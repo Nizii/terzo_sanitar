@@ -47,6 +47,11 @@ function Content() {
 
         <h3>Warum Terzo Sanitär?</h3>
         <p>Professionalität, Zuverlässigkeit und herausragender Kundenservice sind die Säulen unserer Geschäftsphilosophie. Bei Terzo Sanitär sind Sie nicht nur ein Kunde, sondern ein geschätzter Partner.</p>
+      
+        <div class="kontakt">
+          
+        </div>
+      
       </div>
     </div>
   );
