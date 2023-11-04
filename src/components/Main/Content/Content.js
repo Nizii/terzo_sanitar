@@ -56,7 +56,7 @@ Heute, als selbstständiger Fachmann, ist es meine Herzensangelegenheit, Ihr Anl
 Gemeinsam finden wir die beste Lösung für Ihr Vorhaben.
 Ich freue mich darauf, Sie bald persönlich zu beraten und zu unterstützen!</p>
       
-        <div class="kontakt">
+        <div className="kontakt">
           
         </div>
       

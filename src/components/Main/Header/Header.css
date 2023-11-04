@@ -1,15 +1,49 @@
-
-
 .header {
   background-color: #004b8c;
   color: #fff;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.1); 
+  flex-direction: row;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
 
+.hamburger-menu {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 80%;
+  background: #004b8c;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: right 0.3s;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu a {
+  color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .header-logo {
@@ -23,14 +57,19 @@
 .logotext {
   font-size: 40px;
   margin: 0;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 .header nav ul {
   list-style-type: none;
-  padding: 10px;
-  display: flex;
-  gap: 30px;
+  padding: 0;
+  margin-top: 20px;
+  flex-direction: row;
+}
+
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .header nav a {
@@ -58,10 +97,6 @@
   transition: width 0.3s;
 }
 
-.header nav a:hover {
-  color: #ff6f61;
-}
-
 .header nav a:hover::before {
   width: 100%;
 }
@@ -69,28 +104,119 @@
 .adress-bar {
   background-color: #2e2e2e;
   padding: 5px 40px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1); 
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010; /* Höher als der Header */
+}
+
+.header {
+  position: fixed;
+  top: 30px; /* Dies sollte die Höhe der .adress-bar sein */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Niedriger als die .adress-bar */
+  /* Restliche Stile ... */
+  padding-bottom: 20px;
 }
 
 .adress-text {
   color: #fff;
   font-size: 16px;
-  text-align: right !important; 
+  text-align: right;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.adress-text a {
+  color: #fff;
+}
+
+.adress-text a:hover {
+  text-decoration: underline;
+}
+
+.opening-hours {
+  display: inline;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  padding: 0;
+  
+}
+
+.desktop-nav li {
+  padding: 10px;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.desktop-nav a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-
   .adress-bar {
-    padding: 3px 20px; 
-  }
-
-  .adress-text {
-    font-size: 12px;
+    padding: 3px 20px;
+    display: flex;
+    justify-content: center;
+    height: 20px; 
   }
 
   .header {
-    padding: 10px 20px;
-    justify-content: flex-start;
+    top: 20px; /* Stellen Sie sicher, dass dies der Höhe der .adress-bar entspricht */
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .adress-text {
+    font-size: 14px;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .adress-text a {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .adress-text .phone-link {
+    animation: pulseAnimation 2s infinite;
+    text-decoration: none;
+    color: white
+  }
+
+  @keyframes pulseAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .opening-hours {
+    display: none;
+  }
+
+  .header {
+    padding: 20px 20px;
   }
 
   .logotext {
@@ -98,37 +224,41 @@
   }
 
   .header-logo {
-    padding-left: 10px;
-    margin-top: 5px;
-    margin-right: auto;
+    margin: 0;
   }
 
-  .header nav ul {
-    gap: 20px; 
+  .header-content {
+    justify-content: space-between;
   }
-
-  .header nav a {
-    padding: 7px 10px; 
-  }
-
 }
 
 @media (min-width: 769px) {
-  .header {
-    flex-direction: row;
-    align-items: center;
+  .hamburger-menu {
+    display: none;
   }
 
-  .nav-text{
-    font-size: 22px;
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+
+  .desktop-nav ul li {
+    font-size: large;
+  }
+
+  .header-logo, .desktop-nav {
+    flex: 1;
   }
 
   .header-logo {
-    margin-top: 0; 
-  }
-
-  .header nav ul {
-    align-items: center; 
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
+
+
+
 
