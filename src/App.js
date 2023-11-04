@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import Content from './components/Content/Content';
-import Footer from './components/Footer/Footer';
+import Header from './components/Main/Header/Header';
+import Content from './components/Main/Content/Content';
+import Footer from './components/Main/Footer/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutContent from './components/About/AboutContent';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -16,17 +18,23 @@ function App() {
   
     return () => clearTimeout(timer);
   }, []);
-  
 
   return (
-    <div className={fadeContent ? 'fade-in' : ''}>
-      {loading && <h1 className="loading-logo">Terzo Sanitär</h1>}
-      <div className="App">
+    <Router>
+      <div className={fadeContent ? 'fade-in' : ''}>
+        {loading && <h1 className="loading-logo">Terzo Sanitär</h1>}
+        
         <Header />
-        <Content />
+
+        <Routes>
+          <Route path="/" element={<Content />} />
+          <Route path="/about-me" element={<AboutContent />} />
+          
+        </Routes>
+
         <Footer />
       </div>
-    </div>
+    </Router>
   );
 }
 
