@@ -40,6 +40,18 @@ function Header() {
             </button>
           ) : null}
           <nav className={`${isMobile ? 'mobile-menu' : 'desktop-nav'} ${isMenuOpen ? 'open' : ''}`}>
+            {isMobile && (
+              <>
+              {/* 
+                <div className="mobile-menu-logo">
+                  <img src="./logo.png" alt="logo" />
+                </div>
+                */}
+              <button onClick={() => setMenuOpen(false)} className="close-menu">
+                &times;
+              </button>
+              </>
+            )}
             <ul className='desktop-ul'>
               <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
               <li><Link to="/kontakt" onClick={() => setMenuOpen(false)}>Kontakt</Link></li>

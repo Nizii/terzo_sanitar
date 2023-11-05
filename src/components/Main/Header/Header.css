@@ -16,9 +16,31 @@
   cursor: pointer;
 }
 
+.desktop-ul{
+
+}
+
+.close-menu {
+  font-size: 50px; /* Passen Sie die Größe nach Bedarf an */
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: absolute; /* Damit können Sie die Schaltfläche im Menü positionieren */
+  top: 30px; /* Abstand von oben */
+  right: 20px; /* Abstand von rechts */
+}
+
+/* Sie könnten auch einen Hover-Effekt hinzufügen */
+.close-menu:hover {
+  color: #ff6f61; /* Oder eine andere Farbe, die zum Design passt */
+}
+
+
 .mobile-menu {
   position: fixed;
   top: 0;
+  padding-top: 40px;
   right: -100%;
   height: 100%;
   width: 80%;
@@ -41,6 +63,18 @@
   display: block;
   text-align: left;
 }
+
+.mobile-menu-logo {
+  display: flex;
+  justify-content: center; /* Zentriert das Logo horizontal */
+  margin-bottom: 20px; /* Fügt Abstand unterhalb des Logos hinzu */
+}
+
+.mobile-menu-logo img {
+  max-width: 100%; /* Stellt sicher, dass das Logo responsive ist und sich innerhalb des Containers anpasst */
+  height: auto; /* Hält das Seitenverhältnis des Bildes aufrecht */
+}
+
 
 .mobile-menu a:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -173,14 +207,13 @@ ul {
 
 @media (max-width: 768px) {
   .adress-bar {
-    padding: 3px 20px;
     display: flex;
     justify-content: center;
-    height: 20px; 
   }
 
   .header {
-    top: 20px; /* Stellen Sie sicher, dass dies der Höhe der .adress-bar entspricht */
+    top: 20px;
+    padding: 20px 20px;
   }
 
   .desktop-nav {
@@ -188,21 +221,22 @@ ul {
   }
 
   .adress-text {
-    font-size: 14px;
+    font-size: 12px; /* Verkleinern der Schriftgröße */
     text-align: center;
-    white-space: normal;
-    overflow: visible;
+    white-space: nowrap; /* Verhindert den Zeilenumbruch */
+    overflow: hidden; /* Versteckt überflüssigen Text, wenn der Bildschirm zu klein ist */
+    text-overflow: ellipsis; /* Fügt "..." am Ende des überfließenden Texts hinzu */
   }
 
   .adress-text a {
-    font-size: 14px;
+    font-size: 12px; /* Gleiche Verkleinerung der Schriftgröße für Links */
     color: #fff;
   }
 
   .adress-text .phone-link {
     animation: pulseAnimation 2s infinite;
     text-decoration: none;
-    color: white
+    color: white;
   }
 
   @keyframes pulseAnimation {
@@ -213,10 +247,6 @@ ul {
 
   .opening-hours {
     display: none;
-  }
-
-  .header {
-    padding: 20px 20px;
   }
 
   .logotext {
@@ -232,7 +262,14 @@ ul {
   }
 }
 
+
 @media (min-width: 769px) {
+  @media (min-width: 769px) {
+    .mobile-menu-logo {
+      display: none; /* Versteckt das Logo im Desktop-Modus */
+    }
+  }  
+
   .hamburger-menu {
     display: none;
   }
