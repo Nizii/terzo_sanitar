@@ -56,6 +56,12 @@
   margin-bottom: 20px;
 }
 
+.phone-link-about {
+  animation: pulseAnimation 2s infinite;
+  text-decoration: none;
+  color: black;
+}
+
 @media (max-width: 768px) {
   .about-me {
     flex-direction: column;
@@ -101,4 +107,6 @@
   }
 
 }
+
+
 

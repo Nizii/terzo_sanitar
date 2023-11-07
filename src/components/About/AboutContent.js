@@ -28,7 +28,7 @@ const AboutMe = () => {
       <section className="about-contact">
         <h2>Kontakt</h2>
         <p>Email: terzosanitaer@bluewin.ch</p>
-        <p>Telefon: +41 76 589 33 31</p>
+        <a href="tel:+41765893331" className="phone-link-about">Telefon +41 76 589 33 31</a>
         <p>Öffnungszeiten: 07.00 - 17.00</p>
         {/* A contact form could be inserted here if desired */}
       </section>
