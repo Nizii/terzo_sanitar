@@ -14,7 +14,45 @@
   border: none;
   color: #fff;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+@keyframes spinShrink {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(0) rotate(-360deg);
+  }
+}
+
+.hamburger-menu:focus, .close-menu:focus {
+  outline: none;
+}
+
+
+.hamburger-menu.spin-shrink {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+/*
+.close-menu.spin-shrink {
+  animation: spinShrink 0.7s forwards;
+}
+*/
+
+.hamburger-menu.spin-shrink {
+  animation-name: spinShrink;
+}
+/*
+.close-menu.spin-shrink {
+  animation-name: spinShrink;
+}
+*/
 
 .desktop-ul{
 
@@ -31,11 +69,6 @@
   right: 20px; /* Abstand von rechts */
 }
 
-/* Sie könnten auch einen Hover-Effekt hinzufügen */
-.close-menu:hover {
-  color: #ff6f61; /* Oder eine andere Farbe, die zum Design passt */
-}
-
 
 .mobile-menu {
   position: fixed;
@@ -49,7 +82,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: right 0.3s;
+  transition: right 1s;
 }
 
 .mobile-menu.open {
@@ -264,10 +297,8 @@ ul {
 
 
 @media (min-width: 769px) {
-  @media (min-width: 769px) {
-    .mobile-menu-logo {
+  .mobile-menu-logo {
       display: none; /* Versteckt das Logo im Desktop-Modus */
-    }
   }  
 
   .hamburger-menu {
