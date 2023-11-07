@@ -6,6 +6,12 @@
   align-items: center;
   flex-direction: row;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 30px; /* Anpassung für die Höhe der Adressleiste */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-bottom: 20px;
 }
 
 .hamburger-menu {
@@ -15,9 +21,7 @@
   color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none; /* Standardmäßig für Desktop versteckt */
 }
 
 @keyframes spin {
@@ -46,9 +50,8 @@
   outline: none;
 }
 
-
 .hamburger-menu.spin {
-  animation: spin 0.3s forwards; /* Adjust time as needed */
+  animation: spin 0.3s forwards;
 }
 
 .hamburger-menu.spin-shrink {
@@ -56,16 +59,15 @@
 }
 
 .close-menu {
-  font-size: 50px; /* Passen Sie die Größe nach Bedarf an */
+  font-size: 50px;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
-  position: absolute; /* Damit können Sie die Schaltfläche im Menü positionieren */
-  top: 30px; /* Abstand von oben */
-  right: 20px; /* Abstand von rechts */
+  position: absolute;
+  top: 30px;
+  right: 20px;
 }
-
 
 .mobile-menu {
   position: fixed;
@@ -78,8 +80,10 @@
   box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  align-items: center; 
   justify-content: flex-start;
   transition: right 1s;
+
 }
 
 .mobile-menu.open {
@@ -95,16 +99,8 @@
 }
 
 .mobile-menu-logo {
-  display: flex;
-  justify-content: center; /* Zentriert das Logo horizontal */
-  margin-bottom: 20px; /* Fügt Abstand unterhalb des Logos hinzu */
+  display: none; /* Standardmäßig für Desktop versteckt */
 }
-
-.mobile-menu-logo img {
-  max-width: 100%; /* Stellt sicher, dass das Logo responsive ist und sich innerhalb des Containers anpasst */
-  height: auto; /* Hält das Seitenverhältnis des Bildes aufrecht */
-}
-
 
 .mobile-menu a:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -128,6 +124,7 @@
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
+  display: flex;
   flex-direction: row;
 }
 
@@ -151,14 +148,7 @@ ul {
 }
 
 .header nav a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #ff6f61;
-  transition: width 0.3s;
+
 }
 
 .header nav a:hover::before {
@@ -173,17 +163,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1010; /* Höher als der Header */
-}
-
-.header {
-  position: fixed;
-  top: 30px; /* Dies sollte die Höhe der .adress-bar sein */
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Niedriger als die .adress-bar */
-  /* Restliche Stile ... */
-  padding-bottom: 20px;
+  z-index: 1010;
 }
 
 .adress-text {
@@ -237,12 +217,23 @@ ul {
 
 @media (max-width: 768px) {
   .adress-bar {
-    display: flex;
-    justify-content: center;
+    display: none; /* Adressleiste auf mobilen Geräten versteckt */
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul li {
+    padding: 10px 0; /* Fügt vertikale Polsterung hinzu, entfernt horizontale */
+  }
+
+  .header nav a {
+    padding: 10px; /* Stellt sicher, dass Links richtig gepolstert sind */
   }
 
   .header {
-    top: 20px;
+    top: 0;
     padding: 20px 20px;
   }
 
@@ -250,16 +241,43 @@ ul {
     display: none;
   }
 
+  .hamburger-menu {
+    display: flex; /* Wird nur auf Mobilgeräten angezeigt */
+  }
+
+  .mobile-menu-logo {
+    display: flex; /* Wird nur auf Mobilgeräten angezeigt */
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .mobile-menu-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .logotext {
+    font-size: 30px;
+  }
+
+  .header-logo {
+    margin: 0;
+  }
+
+  .header-content {
+    justify-content: space-between;
+  }
+
   .adress-text {
-    font-size: 10px; /* Verkleinern der Schriftgröße */
+    font-size: 10px;
     text-align: center;
-    white-space: nowrap; /* Verhindert den Zeilenumbruch */
-    overflow: hidden; /* Versteckt überflüssigen Text, wenn der Bildschirm zu klein ist */
-    text-overflow: ellipsis; /* Fügt "..." am Ende des überfließenden Texts hinzu */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .adress-text a {
-    font-size: 10px; /* Gleiche Verkleinerung der Schriftgröße für Links */
+    font-size: 10px;
     color: #fff;
   }
 
@@ -278,36 +296,12 @@ ul {
   .opening-hours {
     display: none;
   }
-
-  .logotext {
-    font-size: 30px;
-  }
-
-  .header-logo {
-    margin: 0;
-  }
-
-  .header-content {
-    justify-content: space-between;
-  }
 }
 
-
 @media (min-width: 769px) {
-  .mobile-menu-logo {
-      display: none; /* Versteckt das Logo im Desktop-Modus */
-  }  
-
-  .hamburger-menu {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: none;
-  }
-
   .desktop-nav {
-    display: block;
+    justify-content: flex-end;
+    padding-right: 100px;
   }
 
   .desktop-nav ul li {
@@ -322,8 +316,26 @@ ul {
     flex-grow: 0;
     flex-shrink: 0;
   }
+
+  .header nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s;
+  }
+
+  .header nav a:hover::before {
+    width: 100%;
+  }
 }
 
-
-
+.header nav a:hover, .header nav a:active {
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 
