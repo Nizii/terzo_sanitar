@@ -8,17 +8,31 @@ function Header() {
 
   const toggleMenuAnimation = () => {
     const menu = document.querySelector('.mobile-menu');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const closeButton = document.querySelector('.close-menu');
+    
     if (!isMenuOpen) {
-      // Wird ausgeführt, wenn das Menü derzeit geschlossen ist und geöffnet werden soll.
-      setMenuOpen(true); // Ändern Sie den Status sofort, um das Menü zu öffnen.
+      // Rotate the hamburger icon
+      hamburger.classList.add('spin');
+      // Open the menu
+      setMenuOpen(true);
       menu.classList.add('open');
     } else {
-      // Wird ausgeführt, wenn das Menü geöffnet ist und geschlossen werden soll.
-      // Starten Sie die Schließanimation des Menüs und warten Sie auf deren Ende.
-      menu.classList.remove('open');
+      // Apply the rotate animation to the close button
+      closeButton.classList.add('rotate');
+
+      // We need to wait for the rotate animation to finish before closing the menu
       setTimeout(() => {
-        setMenuOpen(false); // Ändern Sie den Status nach der Animation, um das Menü zu schließen.
-      }, 700); // Diese Dauer sollte der Animationsdauer entsprechen.
+        // Close the menu
+        menu.classList.remove('open');
+        
+        // Reset the hamburger icon rotation
+        hamburger.classList.remove('spin');
+        // Reset the close button rotation
+        closeButton.classList.remove('rotate');
+
+        setMenuOpen(false);
+      }, 300); // The timeout should match the duration of the CSS animations
     }
   };
   
@@ -56,7 +70,7 @@ function Header() {
           {isMobile && (
             <button
               onClick={toggleMenuAnimation}
-              className={`hamburger-menu ${isMenuOpen ? 'spin-shrink' : ''}`}>
+              className={`hamburger-menu ${isMenuOpen ? 'spin' : ''}`}>
               ☰
             </button>
           )}

@@ -20,13 +20,26 @@
   align-items: center;
 }
 
-@keyframes spinShrink {
+@keyframes spin {
   from {
-    transform: scale(1) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: scale(0) rotate(-360deg);
+    transform: rotate(-90deg);
   }
+}
+
+@keyframes rotateClose {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.close-menu.rotate {
+  animation: rotateClose 0.3s forwards;
 }
 
 .hamburger-menu:focus, .close-menu:focus {
@@ -34,28 +47,12 @@
 }
 
 
-.hamburger-menu.spin-shrink {
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
+.hamburger-menu.spin {
+  animation: spin 0.3s forwards; /* Adjust time as needed */
 }
-
-/*
-.close-menu.spin-shrink {
-  animation: spinShrink 0.7s forwards;
-}
-*/
 
 .hamburger-menu.spin-shrink {
-  animation-name: spinShrink;
-}
-/*
-.close-menu.spin-shrink {
-  animation-name: spinShrink;
-}
-*/
-
-.desktop-ul{
-
+  animation-name: none;
 }
 
 .close-menu {
@@ -73,7 +70,7 @@
 .mobile-menu {
   position: fixed;
   top: 0;
-  padding-top: 40px;
+  padding-top: 70px;
   right: -100%;
   height: 100%;
   width: 80%;
@@ -254,7 +251,7 @@ ul {
   }
 
   .adress-text {
-    font-size: 12px; /* Verkleinern der Schriftgröße */
+    font-size: 10px; /* Verkleinern der Schriftgröße */
     text-align: center;
     white-space: nowrap; /* Verhindert den Zeilenumbruch */
     overflow: hidden; /* Versteckt überflüssigen Text, wenn der Bildschirm zu klein ist */
@@ -262,7 +259,7 @@ ul {
   }
 
   .adress-text a {
-    font-size: 12px; /* Gleiche Verkleinerung der Schriftgröße für Links */
+    font-size: 10px; /* Gleiche Verkleinerung der Schriftgröße für Links */
     color: #fff;
   }
 
