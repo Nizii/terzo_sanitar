@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
@@ -6,10 +6,20 @@ function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // Refs erstellen für die DOM-Elemente
+  const menuRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
   const toggleMenuAnimation = () => {
-    const menu = document.querySelector('.mobile-menu');
-    const hamburger = document.querySelector('.hamburger-menu');
-    const closeButton = document.querySelector('.close-menu');
+    const menu = menuRef.current;
+    const hamburger = hamburgerRef.current;
+    const closeButton = closeButtonRef.current;
+
+    if (!menu || !hamburger || !closeButton) {
+      console.error('Eines der Elemente ist null:', { menu, hamburger, closeButton });
+      return; // Frühzeitiger Ausstieg, wenn ein Element nicht vorhanden ist
+    }
     
     if (!isMenuOpen) {
       // Rotate the hamburger icon
@@ -36,9 +46,6 @@ function Header() {
     }
   };
   
-  
-  
-
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);
@@ -51,6 +58,7 @@ function Header() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return (
     <div className="header-section">
@@ -69,12 +77,13 @@ function Header() {
           </div>
           {isMobile && (
             <button
-              onClick={toggleMenuAnimation}
-              className={`hamburger-menu ${isMenuOpen ? 'spin' : ''}`}>
-              ☰
-            </button>
+            onClick={toggleMenuAnimation}
+            ref={hamburgerRef} // Hamburger-Button Ref
+            className={`hamburger-menu ${isMenuOpen ? 'spin' : ''}`}>
+            ☰
+          </button>
           )}
-          <nav className={`${isMobile ? 'mobile-menu' : 'desktop-nav'}`}>
+          <nav ref={menuRef} className={`${isMobile ? 'mobile-menu' : 'desktop-nav'}`}> {/* Menu Ref */}
             {isMobile && (
               <>
                 {/*
@@ -84,6 +93,7 @@ function Header() {
                 */}
                 <button
                   onClick={toggleMenuAnimation}
+                  ref={closeButtonRef} // Close-Button Ref
                   className="close-menu">
                   &times;
                 </button>
