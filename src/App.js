@@ -17,7 +17,7 @@ function App() {
       setLoading(false);
       setFadeContent(true);
       setShowLogo(false); // Versteckt das Logo nach dem Timer
-    }, 0); // Zeitraum, nach dem das Logo verschwindet (hier: 3 Sekunden)
+    }, 2000); // Zeitraum, nach dem das Logo verschwindet (hier: 3 Sekunden)
   
     return () => clearTimeout(timer);
   }, []);

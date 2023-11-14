@@ -14,11 +14,11 @@
 .logo {
   max-width: 200px; /* passen Sie die Größe entsprechend an */
   opacity: 1;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .fade-in {
-  animation: fadeInAnimation ease 1s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
