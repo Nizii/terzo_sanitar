@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutContent.css'; // Import the CSS stylesheet
+import { FaLinkedin } from 'react-icons/fa';
 
 const AboutMe = () => {
   return (
@@ -12,6 +13,15 @@ const AboutMe = () => {
       </section>
       <section className="about-info">
         <h2>Wer bin ich?</h2>
+        <p className="about-highlight">Salvatore Terzo</p>
+        <p className="about-highlight">Sanitär Chefmonteur</p>
+        <p className='about-highlight'>
+            <a href="linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
+              <FaLinkedin /> LinkedIn Profil
+            </a>
+          </p>
+
+
         <p>
           Mein Name ist Salvatore Terzo, geboren 1988, und Ihre Zufriedenheit ist mein oberstes Ziel.
           Meine berufliche Laufbahn begann 2008, als ich meine Lehre als Sanitär Monteur EFZ bei der renommierten Firma A. Baltensberger erfolgreich abschloss.
@@ -24,13 +34,6 @@ const AboutMe = () => {
           Gemeinsam finden wir die beste Lösung für Ihr Vorhaben.
           Ich freue mich darauf, Sie bald persönlich zu beraten und zu unterstützen!
         </p>
-      </section>
-      <section className="about-contact">
-        <h2>Kontakt</h2>
-        <p>Email: terzosanitaer@bluewin.ch</p>
-        <a href="tel:+41765893331" className="phone-link-about">Telefon +41 76 589 33 31</a>
-        <p>Öffnungszeiten: 07.00 - 17.00</p>
-        {/* A contact form could be inserted here if desired */}
       </section>
     </main>
   );

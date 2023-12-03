@@ -101,9 +101,7 @@ function Header() {
             )}
             <ul className='desktop-ul'>
               <li><Link to="/" onClick={toggleMenuAnimation}>Home</Link></li>
-              {/*
-              <li><Link to="/kontakt" onClick={toggleMenuAnimation}>Kontakt</Link></li>
-              */}
+              <li><Link to="/kontaktseite" onClick={toggleMenuAnimation}>Kontakt</Link></li>
               <li><Link to="/about-me" onClick={toggleMenuAnimation}>Über mich</Link></li>
             </ul>
           </nav>

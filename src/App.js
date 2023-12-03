@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Main/Header/Header';
 import Content from './components/Main/Content/Content';
-import Footer from './components/Main/Footer/Footer';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutContent from './components/About/AboutContent';
-
+import Kontakt from './components/Kontakt/KontaktContent';
+import Footer from './components/Main/Footer/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Content />} />
+              <Route path="/kontaktseite" element={<Kontakt />} />
               <Route path="/about-me" element={<AboutContent />} />
             </Routes>
             <Footer />
