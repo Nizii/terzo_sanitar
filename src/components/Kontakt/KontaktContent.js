@@ -3,7 +3,7 @@ import './KontaktContent.css'; // Import the CSS stylesheet
 import { FaLinkedin } from 'react-icons/fa';
 
 const Kontakt = () => {
-  const apiKey = 'AIzaSyBulbY-7QiVsxabI5nIWHeMcGDcHqZHZkM'; // Ersetzen Sie dies mit Ihrem Google Maps API Key
+  const apiKey = 'AIzaSyBulbY-7QiVsxabI5nIWHeMcGDcHqZHZkM';
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Terzo+Sanitär+GmbH,Lindenstrasse+40,8153+Rümlang`;
 
   return (
@@ -11,30 +11,29 @@ const Kontakt = () => {
       <div className='isolation'>
         <section className="standort">
           <h2>Adresse</h2>
-          <p className='kontakt-text'>
-            Terzo Sanitär GmbH
-          </p>
-          <p className='kontakt-text'>
-            Lindenstrasse 40
-          </p>
-          <p className='kontakt-text'>
-            8153 Rümlang
-          </p>
+          <p className='kontakt-text'>Terzo Sanitär GmbH</p>
+          <p className='kontakt-text'>Lindenstrasse 40</p>
+          <p className='kontakt-text'>8153 Rümlang</p>
         </section>
+
 
         <section className="direktkontakt">
           <h2>Kontakt</h2>
-          <a href="tel:+41765893331" className="phone-link-about">Telefon +41 76 589 33 31</a>
+          <p className='kontakt-text'>
+            <a href="tel:+41765893331" className="phone-link-about">Telefon +41 76 589 33 31</a>
+          </p>
           <p className='kontakt-text'>
             Email terzosanitaer@bluewin.ch 
           </p>
+
+          <p className='kontakt-text'>
+            Öffnungszeiten 07.00 - 17.00
+          </p>       
+          <br/>
           <p className='kontakt-text'>
             <a href="linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
               <FaLinkedin /> LinkedIn Profil
             </a>
-          </p>
-          <p className='kontakt-text'>
-            Öffnungszeiten 07.00 - 17.00
           </p>
         </section>
       </div>
