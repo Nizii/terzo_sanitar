@@ -31,7 +31,7 @@ const Kontakt = () => {
           </p>       
           <br/>
           <p className='kontakt-text'>
-            <a href="linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
+            <a href="https://linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
               <FaLinkedin /> LinkedIn Profil
             </a>
           </p>

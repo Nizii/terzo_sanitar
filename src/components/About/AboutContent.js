@@ -16,7 +16,7 @@ const AboutMe = () => {
         <p className="about-highlight">Salvatore Terzo</p>
         <p className="about-highlight">Sanitär Chefmonteur</p>
         <p className='about-highlight'>
-            <a href="linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
+            <a href="https://linkedin.com/in/terzo-salvatore-angelo-2194b520b" className="linkedin-link">
               <FaLinkedin /> LinkedIn Profil
             </a>
           </p>
