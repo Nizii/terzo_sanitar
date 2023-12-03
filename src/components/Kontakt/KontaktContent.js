@@ -3,7 +3,7 @@ import './KontaktContent.css'; // Import the CSS stylesheet
 import { FaLinkedin } from 'react-icons/fa';
 
 const Kontakt = () => {
-  const apiKey = 'AIzaSyBulbY-7QiVsxabI5nIWHeMcGDcHqZHZkM';
+  const apiKey = '?';
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Terzo+Sanitär+GmbH,Lindenstrasse+40,8153+Rümlang`;
 
   return (
