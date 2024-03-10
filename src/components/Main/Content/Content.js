@@ -3,11 +3,20 @@ import './Content.css';
 
 
 function Content() {
-  const [currentImage, setCurrentImage] = useState("bad.png");
+  const [currentImage, setCurrentImage] = useState("1.JPG");
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-      const images = ["bad.png", "kuche.png", "heizung.png"];
+      const images = [
+        "1.JPG",
+        "2.JPG",
+        "3.JPG",
+        "4.JPG",
+        "5.JPG",
+        "6.JPG",
+        "7.JPG",
+        "8.JPG"
+      ];
       let currentIndex = 0;
 
       const changeImage = () => {
@@ -20,10 +29,10 @@ function Content() {
               setCurrentImage(images[currentIndex]);
               // Bild einblenden
               setOpacity(1);
-          }, 1000);  // nach 1s (entspricht der Dauer des Ausblendens)
+          }, 1000);  // nach 500s (entspricht der Dauer des Ausblendens)
       };
 
-      const intervalId = setInterval(changeImage, 6000); // 1s zum Ausblenden + 3s Anzeige = 4s
+      const intervalId = setInterval(changeImage, 4000); // 1s zum Ausblenden + 3s Anzeige = 4s
 
       return () => {
           clearInterval(intervalId);
