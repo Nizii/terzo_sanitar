@@ -20,19 +20,22 @@ function Content() {
       let currentIndex = 0;
 
       const changeImage = () => {
-          // Bild ausblenden
-          setOpacity(0);
-
-          setTimeout(() => {
-              // Bild wechseln
-              currentIndex = (currentIndex + 1) % images.length;
-              setTimeout(() => {
-                setOpacity(1); // Startet das Einblenden nachdem das neue Bild gesetzt wurde
-            }, 100); // Gibt dem Browser Zeit, das Bild zu wechseln, bevor es eingeblendet wird
-        }, 1000);  // nach 500s (entspricht der Dauer des Ausblendens)
-      };
-
-      const intervalId = setInterval(changeImage, 5000); // 1s zum Ausblenden + 3s Anzeige = 4s
+        // Bild ausblenden
+        setOpacity(0);
+    
+        setTimeout(() => {
+            // Bild wechseln
+            currentIndex = (currentIndex + 1) % images.length;
+            setCurrentImage(images[currentIndex]); // Diese Zeile tatsächlich das Bild aktualisieren
+    
+            setTimeout(() => {
+                // Bild einblenden
+                setOpacity(1);
+            }, 500); // Kurze Verzögerung, um dem Browser Zeit zu geben, das Bild zu wechseln, bevor es eingeblendet wird
+        }, 1000); // Zeit für das Ausblenden
+    };
+    
+    const intervalId = setInterval(changeImage, 5000);
 
       return () => {
           clearInterval(intervalId);
