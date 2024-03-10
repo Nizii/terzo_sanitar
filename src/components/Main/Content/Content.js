@@ -26,13 +26,13 @@ function Content() {
           setTimeout(() => {
               // Bild wechseln
               currentIndex = (currentIndex + 1) % images.length;
-              setCurrentImage(images[currentIndex]);
-              // Bild einblenden
-              setOpacity(1);
-          }, 1500);  // nach 500s (entspricht der Dauer des Ausblendens)
+              setTimeout(() => {
+                setOpacity(1); // Startet das Einblenden nachdem das neue Bild gesetzt wurde
+            }, 100); // Gibt dem Browser Zeit, das Bild zu wechseln, bevor es eingeblendet wird
+        }, 1000);  // nach 500s (entspricht der Dauer des Ausblendens)
       };
 
-      const intervalId = setInterval(changeImage, 4000); // 1s zum Ausblenden + 3s Anzeige = 4s
+      const intervalId = setInterval(changeImage, 5000); // 1s zum Ausblenden + 3s Anzeige = 4s
 
       return () => {
           clearInterval(intervalId);
