@@ -124,13 +124,27 @@ function SinglePage() {
 
       {/* Cooperation and Suppliers Section */}
       <div className="kooperationen">
-        <h2>Kooperationen und Lieferanten</h2>
-        <ul>
-          <li>Lieferant 1</li>
-          <li>Lieferant 2</li>
-          <li>Kooperationspartner 1</li>
-        </ul>
-      </div>
+  <h2>Kooperationen und Lieferanten</h2>
+  <div className="kooperationen-container">
+    <div className="kooperationen-item">
+      <img src="./images/baeder.jpg" alt="Richner Miauton" />
+      <a href="https://www.baubedarf-richner-miauton.ch/de/produkte/baeder/" target="_blank" rel="noopener noreferrer">Richner Miauton</a>
+    </div>
+    <div className="kooperationen-item">
+      <img src="./images/sanitastroesch.jpg" alt="Sanitas Troesch" />
+      <a href="https://www.sanitastroesch.ch/de" target="_blank" rel="noopener noreferrer">Sanitas Troesch</a>
+    </div>
+    <div className="kooperationen-item">
+      <img src="./images/baltensperger.jpg" alt="Baltensperger" />
+      <a href="https://baltensperger.ch/" target="_blank" rel="noopener noreferrer">Baltensperger</a>
+    </div>
+    <div className="kooperationen-item">
+      <img src="./images/dalidali.jpg" alt="Dali Dali" />
+      <a href="https://www.dalidali.ch/kontakt" target="_blank" rel="noopener noreferrer">Dali Dali</a>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }

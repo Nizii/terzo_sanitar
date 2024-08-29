@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './components/Main/Header/Header';
 import Content from './components/Main/Content/Content';
-import AboutContent from './components/About/AboutContent';
-import Kontakt from './components/Kontakt/KontaktContent';
 import Footer from './components/Main/Footer/Footer';
 
 function App() {
@@ -32,8 +30,6 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Content />} />
-              <Route path="/kontaktseite" element={<Kontakt />} />
-              <Route path="/about-me" element={<AboutContent />} />
             </Routes>
             <Footer />
           </>
