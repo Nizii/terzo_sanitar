@@ -60,6 +60,8 @@ function SinglePage() {
         <p>Mein Name ist Salvatore Terzo, geboren 1988, und Ihre Zufriedenheit ist mein oberstes Ziel. Meine berufliche Laufbahn begann 2008, als ich meine Lehre als Sanitär Monteur EFZ bei der renommierten Firma A. Baltensberger erfolgreich abschloss. Seitdem konnte ich vielfältige Erfahrungen in diversen Bereichen des Sanitärhandwerks sammeln. Egal ob als Bauleiter, bei Wasserschäden, in der Beratung für Umbauten oder hauptsächlich im Service – ich habe stets mein Bestes gegeben, um die Wünsche meiner Kunden zu erfüllen. Mein stetiges Streben nach Perfektion und Weiterentwicklung führte mich zur Weiterbildung als Chefmonteur. Dies war ein bedeutender Schritt in meiner Karriere und diente nicht nur der Vertiefung meines Fachwissens, sondern auch dem Ziel, mich selbstständig zu machen. Heute, als selbstständiger Fachmann, ist es meine Herzensangelegenheit, Ihr Anliegen mit höchster Sorgfalt und Professionalität zu behandeln. Denn erst wenn Sie vollständig zufrieden sind, bin ich es auch. Ich lade Sie herzlich ein, mich bei Fragen oder Anliegen zu kontaktieren. Gemeinsam finden wir die beste Lösung für Ihr Vorhaben. Ich freue mich darauf, Sie bald persönlich zu beraten und zu unterstützen!</p>
       </div>
 
+      <hr className="section-divider" />
+
       {/* About Me Section */}
       <div className="about-me">
         <h2>Über mich</h2>
@@ -79,6 +81,8 @@ function SinglePage() {
           </section>
         </div>
       </div>
+
+      <hr className="section-divider" />
 
       {/* Contact Section */}
       <div className="kontaktseite">
@@ -122,30 +126,31 @@ function SinglePage() {
         </section>
       </div>
 
+      <hr className="section-divider" />
+
       {/* Cooperation and Suppliers Section */}
       <div className="kooperationen">
-  <h2>Kooperationen und Lieferanten</h2>
-  <div className="kooperationen-container">
-    <div className="kooperationen-item">
-      <img src="./images/baeder.jpg" alt="Richner Miauton" />
-      <a href="https://www.baubedarf-richner-miauton.ch/de/produkte/baeder/" target="_blank" rel="noopener noreferrer">Richner Miauton</a>
-    </div>
-    <div className="kooperationen-item">
-      <img src="./images/sanitastroesch.jpg" alt="Sanitas Troesch" />
-      <a href="https://www.sanitastroesch.ch/de" target="_blank" rel="noopener noreferrer">Sanitas Troesch</a>
-    </div>
-    <div className="kooperationen-item">
-      <img src="./images/baltensperger.jpg" alt="Baltensperger" />
-      <a href="https://baltensperger.ch/" target="_blank" rel="noopener noreferrer">Baltensperger</a>
-    </div>
-    <div className="kooperationen-item">
-      <img src="./images/dalidali.jpg" alt="Dali Dali" />
-      <a href="https://www.dalidali.ch/kontakt" target="_blank" rel="noopener noreferrer">Dali Dali</a>
+      <h2>Kooperationen und Lieferanten</h2>
+      <div className="kooperationen-container">
+        <div className="kooperationen-item">
+          <img src="./baubedarf.PNG" alt="Richner Miauton" />
+          <a href="https://www.baubedarf-richner-miauton.ch/de/produkte/baeder/" target="_blank" rel="noopener noreferrer">Richner Miauton</a>
+        </div>
+        <div className="kooperationen-item">
+          <img src="./sanitas.PNG" alt="Sanitas Troesch" />
+          <a href="https://www.sanitastroesch.ch/de" target="_blank" rel="noopener noreferrer">Sanitas Troesch</a>
+        </div>
+        <div className="kooperationen-item">
+          <img src="./baltensberger.PNG" alt="Baltensperger" />
+          <a href="https://baltensperger.ch/" target="_blank" rel="noopener noreferrer">Baltensperger</a>
+        </div>
+        <div className="kooperationen-item">
+          <img src="./dali.PNG" alt="Dali Dali" />
+          <a href="https://www.dalidali.ch/kontakt" target="_blank" rel="noopener noreferrer">Dali Dali</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-    </div>
   );
 }
 
