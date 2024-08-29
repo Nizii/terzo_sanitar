@@ -114,6 +114,14 @@
   font-size: 40px;
   margin: 0;
   font-weight: 700;
+  white-space: nowrap; 
+}
+
+@media (max-width: 768px) {
+  .logotext {
+    font-size: 30px;
+    white-space: normal;
+  }
 }
 
 .header nav ul {
