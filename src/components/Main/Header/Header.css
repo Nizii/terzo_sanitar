@@ -11,7 +11,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding-bottom: 20px;
+  padding: 10px 20px; /* Reduzierte Polsterung für mobile Ansicht */
+  max-width: 100%;
 }
 
 .hamburger-menu {
@@ -117,7 +118,7 @@
   white-space: nowrap; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .logotext {
     font-size: 30px;
     white-space: normal;
@@ -219,7 +220,7 @@ ul {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .header nav ul {
     flex-direction: column;
   }
@@ -298,7 +299,7 @@ ul {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .desktop-nav {
     justify-content: flex-end;
     padding-right: 100px;

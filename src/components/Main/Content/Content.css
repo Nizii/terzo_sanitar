@@ -1,10 +1,7 @@
 .section-divider {
   border-top: 2px solid #cccccc; /* Etwas dickerer, hellgrauer Strich */
-  margin: 40px 0; /* Gleicher Abstand oben und unten */
-  margin-left: 10%; /* Abstand zum linken Rand */
-  margin-right: 10%; /* Abstand zum rechten Rand */
+  margin: 50px 0; /* Gleicher Abstand oben und unten */
 }
-
 
 /* Haupt-Content-Bereich */
 .content {
@@ -12,22 +9,26 @@
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
   margin-top: 120px;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 0;
+  margin-left: auto; /* Zentriert den Content */
+  margin-right: auto; /* Zentriert den Content */
 }
 
 /* Wide screen (e.g., 1600px and above) */
-@media (min-width: 1600px) {
+@media (min-width: 2000px) {
   .content {
     max-width: 40%;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
-/* Normal PC screen (e.g., 1024px - 1599px) */
-@media (min-width: 1024px) and (max-width: 1599px) {
+/* Normal PC screen (e.g., 1024px - 1999px) */
+@media (min-width: 1024px) and (max-width: 1999px) {
   .content {
     max-width: 80%;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -36,6 +37,8 @@
   .content {
     max-width: 100%;
     margin-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -58,7 +61,6 @@
   font-size: 1rem;
   color: #333;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .content ul {
@@ -73,7 +75,7 @@
 }
 
 .content-inner {
-  padding: 20px 60px;
+  padding: 20px 0; /* Entfernung des seitlichen Paddings */
 }
 
 .content-image {
@@ -85,13 +87,15 @@
   transition: opacity 0.5s ease-in-out; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .content{
     margin-top: 80px;
   }
   
   .content-image {
-    height: 200px;
+    margin-top: 50px;
+    height: 250px;
+    border-radius: 3px;
   }
 
   .content h2 {
@@ -124,7 +128,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 60px;
+
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  color: black;
+  border-bottom: 3px solid #ff6f61;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .about-content {
@@ -183,12 +196,33 @@
   text-decoration: underline;
 }
 
+/* Mobile-specific styles for About Section */
+@media (max-width: 1023px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
 /* Contact Section */
 .kontaktseite {
   background-color: #f6f6f6;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 60px;
+}
+
+.kontaktseite h2 {
+  font-size: 2rem;
+  color: black;
+  border-bottom: 3px solid #ff6f61;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .isolation {
@@ -197,22 +231,31 @@
   justify-content: space-between;
 }
 
-.standort, .direktkontakt {
-  flex: 1;
-  margin-right: 20px;
+
+
+/* Mobile-specific styles for cooperation section */
+@media (max-width: 1023px) {
+
 }
 
-.kontakt-text {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
+@media (min-width: 1024px) {
+  .kontakt-text {
+    font-size: 1rem;
+    color: #af5353;
+  }
+
+  .phone-link-about {
+    color: #004b8c;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .standort, .direktkontakt {
+    flex: 1;
+    margin-right: 20px;
+  }
 }
 
-.phone-link-about {
-  color: #004b8c;
-  font-weight: bold;
-  text-decoration: none;
-}
+
 
 .phone-link-about:hover {
   text-decoration: underline;
@@ -232,7 +275,6 @@
   background-color: #f6f6f6;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 60px;
 }
 
 /* Cooperation and Suppliers Section */
@@ -286,7 +328,8 @@
   transform: translateY(-5px);
 }
 
-@media (max-width: 768px) {
+/* Mobile-specific styles for cooperation section */
+@media (max-width: 1023px) {
   .kooperationen-container {
     flex-direction: column;
     align-items: center;
@@ -294,10 +337,16 @@
 
   .kooperationen-item {
     flex: 1 1 100%;
-    max-width: 100%;
+    width: 80%;
   }
 
   .kooperationen-item:last-child {
     max-width: 100%;
   }
+  .content, .header, .kooperationen, .kontaktseite {
+    max-width: 100%;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  }
+
 }
+

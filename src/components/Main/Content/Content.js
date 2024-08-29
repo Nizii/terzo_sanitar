@@ -77,7 +77,7 @@ function SinglePage() {
                 <FaLinkedin /> LinkedIn Profil
               </a>
             </p>
-            <p>Mein Name ist Salvatore Terzo, geboren 1988, und Ihre Zufriedenheit ist mein oberstes Ziel...</p>
+            <p>Mein Name ist Salvatore Terzo, geboren 1988, und Ihre Zufriedenheit ist mein oberstes Ziel. Meine berufliche Laufbahn begann 2008, als ich meine Lehre als Sanitär Monteur EFZ bei der renommierten Firma A. Baltensberger erfolgreich abschloss. Seitdem konnte ich vielfältige Erfahrungen in diversen Bereichen des Sanitärhandwerks sammeln. Egal ob als Bauleiter, bei Wasserschäden, in der Beratung für Umbauten oder hauptsächlich im Service – ich habe stets mein Bestes gegeben, um die Wünsche meiner Kunden zu erfüllen. Mein stetiges Streben nach Perfektion und Weiterentwicklung führte mich zur Weiterbildung als Chefmonteur. Dies war ein bedeutender Schritt in meiner Karriere und diente nicht nur der Vertiefung meines Fachwissens, sondern auch dem Ziel, mich selbstständig zu machen. Heute, als selbstständiger Fachmann, ist es meine Herzensangelegenheit, Ihr Anliegen mit höchster Sorgfalt und Professionalität zu behandeln. Denn erst wenn Sie vollständig zufrieden sind, bin ich es auch. Ich lade Sie herzlich ein, mich bei Fragen oder Anliegen zu kontaktieren. Gemeinsam finden wir die beste Lösung für Ihr Vorhaben. Ich freue mich darauf, Sie bald persönlich zu beraten und zu unterstützen!</p>
           </section>
         </div>
       </div>
@@ -86,16 +86,16 @@ function SinglePage() {
 
       {/* Contact Section */}
       <div className="kontaktseite">
+        <h2>Kontakt</h2>
         <div className='isolation'>
           <section className="standort">
-            <h2>Adresse</h2>
+            
             <p className='kontakt-text'>Terzo Sanitär GmbH</p>
             <p className='kontakt-text'>Lindenstrasse 40</p>
             <p className='kontakt-text'>8153 Rümlang</p>
           </section>
 
           <section className="direktkontakt">
-            <h2>Kontakt</h2>
             <p className='kontakt-text'>
               <a href="tel:+41765893331" className="phone-link-about">Telefon +41 76 589 33 31</a>
             </p>
@@ -112,6 +112,7 @@ function SinglePage() {
             </p>
           </section>
         </div>
+        {/* 
         <section className="map">
           <h2>Standort</h2>
           <iframe
@@ -124,6 +125,7 @@ function SinglePage() {
             src={mapSrc}
           />
         </section>
+      */}
       </div>
 
       <hr className="section-divider" />
